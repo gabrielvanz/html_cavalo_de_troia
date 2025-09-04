@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavalo de Tróia - Cyber e Segurança</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho com Menu de Navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Cyber Security</span>
+                </div>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#definicao" class="nav-link">Definição</a></li>
+                    <li><a href="#explicacao" class="nav-link">Explicação</a></li>
+                    <li><a href="#exemplos" class="nav-link">Exemplos</a></li>
+                    <li><a href="#obtencao" class="nav-link">Obtenção</a></li>
+                    <li><a href="#instalacao" class="nav-link">Instalação</a></li>
+                    <li><a href="#propagacao" class="nav-link">Propagação</a></li>
+                    <li><a href="#acoes" class="nav-link">Ações</a></li>
+                    <li><a href="#prevencao" class="nav-link">Prevenção</a></li>
+                    <li><a href="#linguagens" class="nav-link">Linguagens</a></li>
+                    <li><a href="#consequencias" class="nav-link">Consequências</a></li>
+                    <li><a href="#curiosidades" class="nav-link">Curiosidades</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-text="Cavalo de Tróia">Cavalo de Tróia</h1>
+            <p class="hero-subtitle">Entendendo os Riscos e Mecanismos de Proteção</p>
+            <div class="hero-image">
+                <i class="fas fa-horse-head"></i>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1000000">0</span>
+                    <span class="stat-label">Vítimas Globais</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Novos Trojans/Dia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="95">0</span>
+                    <span class="stat-label">% de Ataques por E-mail</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        
+        <!-- Definição -->
+        <section id="definicao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Definição
+                </h2>
+                <div class="content-card animated-card">
+                    <div class="card-glow"></div>
+                    <p>O <strong>Cavalo de Tróia</strong> (ou Trojan Horse) é um tipo de malware que se disfarça como software legítimo para enganar usuários e obter acesso não autorizado a sistemas computacionais. Diferentemente de vírus, os trojans não se replicam automaticamente, mas dependem da ação do usuário para serem executados.</p>
+                    <div class="interactive-demo">
+                        <div class="demo-container">
+                            <div class="demo-screen">
+                                <div class="demo-window">
+                                    <div class="demo-titlebar">
+                                        <div class="demo-buttons">
+                                            <span class="demo-btn red"></span>
+                                            <span class="demo-btn yellow"></span>
+                                            <span class="demo-btn green"></span>
+                                        </div>
+                                        <span class="demo-title">Arquivo Seguro.exe</span>
+                                    </div>
+                                    <div class="demo-content">
+                                        <div class="demo-icon">📁</div>
+                                        <p>Clique para executar</p>
+                                    </div>
+                                </div>
+                                <div class="demo-trojan">
+                                    <div class="trojan-icon">🐴</div>
+                                    <p>Trojan Ativado!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cavalo de Tróia conceitual" class="content-image hover-zoom">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explicação -->
+        <section id="explicacao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Explicação
+                </h2>
+                <div class="content-card">
+                    <p>O termo "Cavalo de Tróia" remonta à mitologia grega, onde soldados se esconderam dentro de um cavalo de madeira para invadir a cidade de Tróia. Na computação, o conceito é similar: o malware se apresenta como algo útil ou inofensivo, mas contém código malicioso oculto.</p>
+                    <p>Os trojans são projetados para:</p>
+                    <ul class="feature-list">
+                        <li>Roubar informações pessoais e financeiras</li>
+                        <li>Controlar o sistema remotamente</li>
+                        <li>Instalar outros malwares</li>
+                        <li>Monitorar atividades do usuário</li>
+                        <li>Usar o computador para ataques DDoS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemplos Reais -->
+        <section id="exemplos" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Exemplos Reais de Incidentes
+                </h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>Zeus Trojan (2007-2010)</h3>
+                        <p>Um dos trojans bancários mais famosos, responsável por roubar milhões de dólares através de ataques de phishing e keyloggers.</p>
+                        <span class="impact">Impacto: $100+ milhões roubados</span>
+                    </div>
+                    <div class="example-card">
+                        <h3>Emotet (2014-2021)</h3>
+                        <p>Inicialmente um trojan bancário que evoluiu para uma plataforma de distribuição de malware, infectando milhões de computadores.</p>
+                        <span class="impact">Impacto: 1.6+ milhões de vítimas</span>
+                    </div>
+                    <div class="example-card">
+                        <h3>TrickBot (2016-presente)</h3>
+                        <p>Modular banking trojan que se espalha através de campanhas de phishing e é usado para distribuir ransomware.</p>
+                        <span class="impact">Impacto: Ainda ativo globalmente</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como é Obtido -->
+        <section id="obtencao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-download"></i>
+                    Como é Obtido
+                </h2>
+                <div class="content-card">
+                    <div class="methods-grid">
+                        <div class="method-item">
+                            <i class="fas fa-envelope"></i>
+                            <h3>E-mails de Phishing</h3>
+                            <p>Anexos maliciosos em e-mails que parecem legítimos</p>
+                        </div>
+                        <div class="method-item">
+                            <i class="fas fa-download"></i>
+                            <h3>Downloads Falsos</h3>
+                            <p>Software pirata ou cracks que contêm trojans</p>
+                        </div>
+                        <div class="method-item">
+                            <i class="fas fa-globe"></i>
+                            <h3>Sites Comprometidos</h3>
+                            <p>Downloads drive-by de sites infectados</p>
+                        </div>
+                        <div class="method-item">
+                            <i class="fas fa-usb"></i>
+                            <h3>Dispositivos USB</h3>
+                            <p>Pen drives infectados com trojans</p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Métodos de obtenção de trojans" class="content-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instalação -->
+        <section id="instalacao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-cog"></i>
+                    Como Ocorre a Instalação
+                </h2>
+                <div class="content-card">
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enganar o Usuário</h3>
+                                <p>O trojan se disfarça como software legítimo ou arquivo importante</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Execução pelo Usuário</h3>
+                                <p>O usuário executa o arquivo, pensando que é seguro</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Instalação Silenciosa</h3>
+                                <p>O trojan se instala no sistema sem avisos visíveis</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Ativação</h3>
+                                <p>O malware começa a executar suas funções maliciosas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Propagação -->
+        <section id="propagacao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-share-alt"></i>
+                    Como se Propaga
+                </h2>
+                <div class="content-card">
+                    <div class="propagation-methods">
+                        <div class="prop-item">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <h3>E-mail Automático</h3>
+                            <p>Envia cópias de si mesmo para contatos do usuário</p>
+                        </div>
+                        <div class="prop-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Rede Local</h3>
+                            <p>Explora vulnerabilidades na rede para infectar outros dispositivos</p>
+                        </div>
+                        <div class="prop-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Dispositivos Móveis</h3>
+                            <p>Se espalha através de apps maliciosos ou SMS</p>
+                        </div>
+                        <div class="prop-item">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud Storage</h3>
+                            <p>Infecta arquivos compartilhados em serviços de nuvem</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ações Maliciosas -->
+        <section id="acoes" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-skull-crossbones"></i>
+                    Ações Maliciosas Mais Comuns
+                </h2>
+                <div class="content-card">
+                    <div class="actions-grid">
+                        <div class="action-card">
+                            <i class="fas fa-key"></i>
+                            <h3>Keylogging</h3>
+                            <p>Captura teclas digitadas para roubar senhas e dados sensíveis</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Roubo Financeiro</h3>
+                            <p>Acessa contas bancárias e realiza transferências não autorizadas</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-eye"></i>
+                            <h3>Espionagem</h3>
+                            <p>Monitora atividades e captura screenshots da tela</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-server"></i>
+                            <h3>Botnet</h3>
+                            <p>Transforma o computador em parte de uma rede de bots</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-lock"></i>
+                            <h3>Ransomware</h3>
+                            <p>Criptografa arquivos e exige resgate para liberá-los</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-download"></i>
+                            <h3>Download de Malware</h3>
+                            <p>Baixa e instala outros tipos de malware no sistema</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detecção e Prevenção -->
+        <section id="prevencao" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Detecção e Prevenção
+                </h2>
+                <div class="content-card">
+                    <div class="prevention-grid">
+                        <div class="prevention-category">
+                            <h3><i class="fas fa-search"></i> Detecção</h3>
+                            <ul>
+                                <li>Antivírus atualizado</li>
+                                <li>Análise comportamental</li>
+                                <li>Monitoramento de rede</li>
+                                <li>Sandboxing</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </div>
+                        <div class="prevention-category">
+                            <h3><i class="fas fa-lock"></i> Prevenção</h3>
+                            <ul>
+                                <li>Educação do usuário</li>
+                                <li>Firewall configurado</li>
+                                <li>Atualizações de segurança</li>
+                                <li>Backup regular</li>
+                                <li>Políticas de acesso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Segurança cibernética" class="content-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Linguagens de Programação -->
+        <section id="linguagens" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Linguagens Mais Usadas
+                </h2>
+                <div class="content-card">
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <i class="fab fa-python"></i>
+                            <h3>Python</h3>
+                            <p>Popular para automação e exploração de vulnerabilidades</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fab fa-microsoft"></i>
+                            <h3>C/C++</h3>
+                            <p>Alto desempenho e acesso direto ao sistema</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fab fa-js-square"></i>
+                            <h3>JavaScript</h3>
+                            <p>Para trojans baseados em web e scripts</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fas fa-code"></i>
+                            <h3>Assembly</h3>
+                            <p>Controle total sobre o hardware e evasão de detecção</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fab fa-java"></i>
+                            <h3>Java</h3>
+                            <p>Cross-platform e facilidade de desenvolvimento</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fas fa-terminal"></i>
+                            <h3>PowerShell</h3>
+                            <p>Nativo do Windows e poderoso para automação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consequências Éticas e Legais -->
+        <section id="consequencias" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-gavel"></i>
+                    Consequências Éticas e Legais
+                </h2>
+                <div class="content-card">
+                    <div class="consequences-grid">
+                        <div class="consequence-item">
+                            <h3><i class="fas fa-balance-scale"></i> Aspectos Legais</h3>
+                            <ul>
+                                <li>Crime cibernético punível por lei</li>
+                                <li>Prisão de 3 a 5 anos (Lei 12.737/2012)</li>
+                                <li>Multas e indenizações às vítimas</li>
+                                <li>Responsabilização civil e criminal</li>
+                            </ul>
+                        </div>
+                        <div class="consequence-item">
+                            <h3><i class="fas fa-heart"></i> Aspectos Éticos</h3>
+                            <ul>
+                                <li>Violação da privacidade</li>
+                                <li>Roubo de propriedade intelectual</li>
+                                <li>Dano à confiança digital</li>
+                                <li>Impacto social e econômico</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="legal-notice">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p><strong>Importante:</strong> O desenvolvimento e uso de trojans para fins maliciosos é crime em praticamente todos os países. Este conteúdo é apenas para fins educacionais e de conscientização sobre segurança cibernética.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curiosidades -->
+        <section id="curiosidades" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-lightbulb"></i>
+                    Curiosidades
+                </h2>
+                <div class="content-card">
+                    <div class="curiosities-grid">
+                        <div class="curiosity-item">
+                            <i class="fas fa-history"></i>
+                            <h3>Origem do Nome</h3>
+                            <p>O termo foi cunhado em 1974 por Daniel Edwards, do MIT, inspirado na história grega do Cavalo de Tróia.</p>
+                        </div>
+                        <div class="curiosity-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Evolução Constante</h3>
+                            <p>Novos trojans são criados diariamente, com técnicas cada vez mais sofisticadas de evasão.</p>
+                        </div>
+                        <div class="curiosity-item">
+                            <i class="fas fa-globe-americas"></i>
+                            <h3>Distribuição Global</h3>
+                            <p>Alguns trojans são específicos de regiões, adaptados aos sistemas bancários locais.</p>
+                        </div>
+                        <div class="curiosity-item">
+                            <i class="fas fa-user-secret"></i>
+                            <h3>Mercado Negro</h3>
+                            <p>Existe um mercado clandestino onde trojans são vendidos como "kits" para criminosos.</p>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dados e estatísticas de segurança" class="content-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Integrantes do Grupo</h3>
+                    <ul class="members-list">
+                        <li>Diogo Chaves</li>
+                        <li>Gabriel Vanz</li>
+                        <li>Vitor Badin</li>
+                    </ul>
+                </div>
+                <div class="footer-logo">
+                    <div class="university-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Atitus Educação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 - Trabalho Acadêmico - Cyber e Segurança</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
