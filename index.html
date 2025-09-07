@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cavalo de Tróia - Cyber e Segurança</title>
+    <title>Cavalo de Tróia - Criptografia e Segurança</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,32 +13,42 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <div class="nav-logo">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Cyber Security</span>
+                <!-- Lado Esquerdo - Logo Criptografia Security -->
+                <div class="nav-left">
+                    <div class="nav-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Criptografia Security</span>
+                    </div>
                 </div>
-                <div class="nav-controls">
+                
+                <!-- Lado Direito - Menu Hamburger e Toggle de Tema -->
+                <div class="nav-right">
                     <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
                         <i class="fas fa-moon"></i>
                     </button>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#definicao" class="nav-link">Definição</a></li>
-                    <li><a href="#explicacao" class="nav-link">Explicação</a></li>
-                    <li><a href="#exemplos" class="nav-link">Exemplos</a></li>
-                    <li><a href="#obtencao" class="nav-link">Obtenção</a></li>
-                    <li><a href="#instalacao" class="nav-link">Instalação</a></li>
-                    <li><a href="#propagacao" class="nav-link">Propagação</a></li>
-                    <li><a href="#acoes" class="nav-link">Ações</a></li>
-                    <li><a href="#prevencao" class="nav-link">Prevenção</a></li>
-                    <li><a href="#linguagens" class="nav-link">Linguagens</a></li>
-                    <li><a href="#consequencias" class="nav-link">Consequências</a></li>
-                    <li><a href="#curiosidades" class="nav-link">Curiosidades</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <div class="hamburger-container">
+                        <div class="hamburger" id="hamburger-menu">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                        <!-- Menu de Navegação Dropdown -->
+                        <div class="nav-dropdown" id="nav-dropdown">
+                            <ul class="nav-menu">
+                                <li><a href="#definicao" class="nav-link">Definição</a></li>
+                                <li><a href="#explicacao" class="nav-link">Explicação</a></li>
+                                <li><a href="#exemplos" class="nav-link">Exemplos</a></li>
+                                <li><a href="#obtencao" class="nav-link">Obtenção</a></li>
+                                <li><a href="#instalacao" class="nav-link">Instalação</a></li>
+                                <li><a href="#propagacao" class="nav-link">Propagação</a></li>
+                                <li><a href="#acoes" class="nav-link">Ações</a></li>
+                                <li><a href="#prevencao" class="nav-link">Prevenção</a></li>
+                                <li><a href="#linguagens" class="nav-link">Linguagens</a></li>
+                                <li><a href="#consequencias" class="nav-link">Consequências</a></li>
+                                <li><a href="#curiosidades" class="nav-link">Curiosidades</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -194,6 +204,16 @@
                             <h3>Dispositivos USB</h3>
                             <p>Pen drives infectados com trojans</p>
                         </div>
+                        <div class="method-item">
+                            <i class="fas fa-share-alt"></i>
+                            <h3>Redes Sociais</h3>
+                            <p>Links maliciosos e perfis falsos em redes sociais</p>
+                        </div>
+                        <div class="method-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Aplicativos Falsos</h3>
+                            <p>Aplicativos móveis maliciosos em lojas não oficiais</p>
+                        </div>
                     </div>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Métodos de obtenção de trojans" class="content-image">
@@ -272,6 +292,16 @@
                             <i class="fas fa-cloud"></i>
                             <h3>Cloud Storage</h3>
                             <p>Infecta arquivos compartilhados em serviços de nuvem</p>
+                        </div>
+                        <div class="prop-item">
+                            <i class="fas fa-wifi"></i>
+                            <h3>Redes Wi-Fi Públicas</h3>
+                            <p>Explora vulnerabilidades em redes Wi-Fi desprotegidas</p>
+                        </div>
+                        <div class="prop-item">
+                            <i class="fas fa-bug"></i>
+                            <h3>Exploits de Software</h3>
+                            <p>Utiliza vulnerabilidades conhecidas para se espalhar automaticamente</p>
                         </div>
                     </div>
                 </div>
@@ -398,6 +428,16 @@
                             <h3>PowerShell</h3>
                             <p>Nativo do Windows e poderoso para automação</p>
                         </div>
+                        <div class="language-item">
+                            <i class="fab fa-rust"></i>
+                            <h3>Rust</h3>
+                            <p>Alto desempenho e segurança para malware avançado</p>
+                        </div>
+                        <div class="language-item">
+                            <i class="fas fa-code"></i>
+                            <h3>Go</h3>
+                            <p>Cross-platform e eficiente para ferramentas de rede</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -468,9 +508,19 @@
                             <h3>Mercado Negro</h3>
                             <p>Existe um mercado clandestino onde trojans são vendidos como "kits" para criminosos.</p>
                         </div>
+                        <div class="curiosity-item">
+                            <i class="fas fa-robot"></i>
+                            <h3>IA e Machine Learning</h3>
+                            <p>Trojans modernos usam inteligência artificial para evadir detecção e se adaptar automaticamente.</p>
+                        </div>
+                        <div class="curiosity-item">
+                            <i class="fas fa-shield-virus"></i>
+                            <h3>Guerra Cibernética</h3>
+                            <p>Alguns trojans são desenvolvidos por governos para espionagem e ataques cibernéticos entre nações.</p>
+                        </div>
                     </div>
                     <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dados e estatísticas de segurança" class="content-image">
+                        <img src="https://i.pinimg.com/736x/47/0b/f5/470bf536f1d1e4ea7b2ee0e42fde81c6.jpg" alt="Dados e estatísticas de segurança" class="content-image2">
                     </div>
                 </div>
             </div>
@@ -498,7 +548,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 - Trabalho Acadêmico - Cyber e Segurança</p>
+                <p>&copy; 2025 - Trabalho Acadêmico - Criptografia e Segurança</p>
             </div>
         </div>
     </footer>

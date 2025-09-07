@@ -3,14 +3,14 @@ const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 // Carregar tema salvo ou usar tema padrão
-const savedTheme = localStorage.getItem('theme') || 'light';
+const savedTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
 // Alternar tema
 themeToggle.addEventListener('click', () => {
     const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
@@ -28,20 +28,41 @@ function updateThemeIcon(theme) {
     icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 }
 
-// Menu Mobile Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// Menu Hamburger Dropdown Toggle
+const hamburger = document.getElementById('hamburger-menu');
+const navDropdown = document.getElementById('nav-dropdown');
 
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    navDropdown.classList.toggle('active');
+}
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    navDropdown.classList.remove('active');
+}
+
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+});
+
+// Fechar menu ao clicar fora dele
+document.addEventListener('click', (e) => {
+    if (!navDropdown.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+    }
 });
 
 // Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', closeMenu));
+
+// Fechar menu ao pressionar ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navDropdown.classList.contains('active')) {
+        closeMenu();
+    }
+});
 
 // Smooth scroll para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -199,12 +220,15 @@ function initParallax() {
         const hero = document.querySelector('.hero');
         const particles = document.querySelectorAll('.particle');
         
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        // Aplicar parallax apenas se a seção hero estiver visível
+        if (hero && scrolled < window.innerHeight) {
+            hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+        } else if (hero) {
+            hero.style.transform = 'translateY(0)';
         }
         
         particles.forEach((particle, index) => {
-            const speed = 0.5 + (index % 3) * 0.2;
+            const speed = 0.2 + (index % 3) * 0.1;
             particle.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
@@ -213,7 +237,7 @@ function initParallax() {
 // Efeitos de Hover Avançados
 function initHoverEffects() {
     // Cards com efeito de elevação
-    document.querySelectorAll('.example-card, .action-card, .curiosity-item, .method-item, .language-item').forEach(card => {
+    document.querySelectorAll('.example-card, .action-card, .curiosity-item, .method-item, .language-item, .prop-item').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-15px) scale(1.03)';
             this.style.boxShadow = '0 20px 40px var(--shadow-medium)';
@@ -307,46 +331,7 @@ function showLoading() {
     }, 2000);
 }
 
-// Efeito de Cursor Personalizado
-function initCustomCursor() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: var(--accent-primary);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: all 0.1s ease;
-        opacity: 0;
-    `;
-    document.body.appendChild(cursor);
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
-        cursor.style.opacity = '1';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    
-    // Efeito de hover
-    document.querySelectorAll('a, button, .card, .example-card, .action-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.background = 'var(--accent-secondary)';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.background = 'var(--accent-primary)';
-        });
-    });
-}
+// Efeito de Cursor Personalizado - REMOVIDO
 
 // Sistema de Notificações
 function showNotification(message, type = 'info') {
@@ -390,12 +375,17 @@ function initTypingEffect() {
         function type() {
             if (i < originalText.length) {
                 heroTitle.textContent += originalText.charAt(i);
+                
+                // Adicionar classe 'loaded' para ativar o brilho progressivamente
+                heroTitle.classList.add('loaded');
+                
                 i++;
-                setTimeout(type, 150);
+                setTimeout(type, 100);
             }
         }
         
-        setTimeout(type, 1000);
+        // Iniciar a digitação após um pequeno delay
+        setTimeout(type, 500);
     }
 }
 
@@ -408,11 +398,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initHoverEffects();
     initScrollIndicator();
     initTooltips();
-    initCustomCursor();
     initTypingEffect();
     
     // Observar elementos para animação
-    document.querySelectorAll('.content-card, .example-card, .method-item, .action-card, .curiosity-item, .language-item').forEach(el => {
+    document.querySelectorAll('.content-card, .example-card, .method-item, .action-card, .curiosity-item, .language-item, .prop-item').forEach(el => {
         el.classList.add('animate-on-scroll');
         animationObserver.observe(el);
     });
@@ -422,10 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
         counterObserver.observe(counter);
     });
     
-    // Mostrar notificação de boas-vindas
-    setTimeout(() => {
-        showNotification('Bem-vindo ao site sobre Cavalo de Tróia! 🛡️', 'info');
-    }, 2000);
     
     // Efeito de entrada suave
     document.body.style.opacity = '0';
@@ -481,41 +466,4 @@ document.querySelector('.hero-image').addEventListener('click', () => {
     }
 });
 
-// Efeito de partículas no cursor
-document.addEventListener('mousemove', (e) => {
-    if (Math.random() < 0.1) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: fixed;
-            left: ${e.clientX}px;
-            top: ${e.clientY}px;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            animation: particleFade 1s ease-out forwards;
-        `;
-        
-        document.body.appendChild(particle);
-        
-        setTimeout(() => particle.remove(), 1000);
-    }
-});
-
-// Adicionar animação CSS para partículas do cursor
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes particleFade {
-        0% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0);
-        }
-    }
-`;
-document.head.appendChild(style);
+// Efeito de partículas no cursor - REMOVIDO
