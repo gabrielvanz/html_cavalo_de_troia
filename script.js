@@ -3,14 +3,14 @@ const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 // Carregar tema salvo ou usar tema padrão
-const savedTheme = localStorage.getItem('theme') || 'light';
+const savedTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
 // Alternar tema
 themeToggle.addEventListener('click', () => {
     const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
@@ -28,20 +28,41 @@ function updateThemeIcon(theme) {
     icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 }
 
-// Menu Mobile Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// Menu Hamburger Dropdown Toggle
+const hamburger = document.getElementById('hamburger-menu');
+const navDropdown = document.getElementById('nav-dropdown');
 
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    navDropdown.classList.toggle('active');
+}
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    navDropdown.classList.remove('active');
+}
+
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+});
+
+// Fechar menu ao clicar fora dele
+document.addEventListener('click', (e) => {
+    if (!navDropdown.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+    }
 });
 
 // Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', closeMenu));
+
+// Fechar menu ao pressionar ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navDropdown.classList.contains('active')) {
+        closeMenu();
+    }
+});
 
 // Smooth scroll para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -199,12 +220,15 @@ function initParallax() {
         const hero = document.querySelector('.hero');
         const particles = document.querySelectorAll('.particle');
         
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        // Aplicar parallax apenas se a seção hero estiver visível
+        if (hero && scrolled < window.innerHeight) {
+            hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+        } else if (hero) {
+            hero.style.transform = 'translateY(0)';
         }
         
         particles.forEach((particle, index) => {
-            const speed = 0.5 + (index % 3) * 0.2;
+            const speed = 0.2 + (index % 3) * 0.1;
             particle.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
@@ -351,12 +375,17 @@ function initTypingEffect() {
         function type() {
             if (i < originalText.length) {
                 heroTitle.textContent += originalText.charAt(i);
+                
+                // Adicionar classe 'loaded' para ativar o brilho progressivamente
+                heroTitle.classList.add('loaded');
+                
                 i++;
-                setTimeout(type, 150);
+                setTimeout(type, 100);
             }
         }
         
-        setTimeout(type, 1000);
+        // Iniciar a digitação após um pequeno delay
+        setTimeout(type, 500);
     }
 }
 
@@ -382,10 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
         counterObserver.observe(counter);
     });
     
-    // Mostrar notificação de boas-vindas
-    setTimeout(() => {
-        showNotification('Bem-vindo ao site sobre Cavalo de Tróia! 🛡️', 'info');
-    }, 2000);
     
     // Efeito de entrada suave
     document.body.style.opacity = '0';
