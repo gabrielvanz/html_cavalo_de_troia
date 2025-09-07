@@ -1,0 +1,32 @@
+2025-09-07 17:57:51,024 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 17:57:51,031 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 17:57:51,037 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Educacional iniciada
+2025-09-07 17:58:01,094 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Educacional finalizada
+2025-09-07 17:58:01,110 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Detecção iniciada
+2025-09-07 17:58:07,638 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Detecção finalizada
+2025-09-07 17:58:07,641 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Prevenção iniciada
+2025-09-07 17:58:13,173 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Prevenção finalizada
+2025-09-07 17:58:13,176 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Análise iniciada
+2025-09-07 17:58:17,996 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Análise finalizada
+2025-09-07 17:58:18,005 - INFO - Iniciando análise estática de: trojan_example.py
+2025-09-07 17:58:18,021 - INFO - Iniciando análise de tráfego de rede
+2025-09-07 17:58:18,023 - INFO - Iniciando análise comportamental
+2025-09-07 17:58:22,646 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 17:58:22,659 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 17:58:22,671 - INFO - Evento de segurança: WARNING_DISPLAYED - Aviso de segurança exibido ao usuário
+2025-09-07 18:04:06,922 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 18:04:06,929 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 18:04:06,931 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Educacional iniciada
+2025-09-07 18:04:16,944 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Educacional finalizada
+2025-09-07 18:04:16,944 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Detecção iniciada
+2025-09-07 18:04:23,620 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Detecção finalizada
+2025-09-07 18:04:23,620 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Prevenção iniciada
+2025-09-07 18:04:29,138 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Prevenção finalizada
+2025-09-07 18:04:29,139 - INFO - Evento de segurança: SIMULATION_STARTED - Simulação Análise iniciada
+2025-09-07 18:04:33,954 - INFO - Evento de segurança: SIMULATION_ENDED - Simulação Análise finalizada
+2025-09-07 18:04:33,954 - INFO - Iniciando análise estática de: trojan_example.py
+2025-09-07 18:04:33,954 - INFO - Iniciando análise de tráfego de rede
+2025-09-07 18:04:33,954 - INFO - Iniciando análise comportamental
+2025-09-07 18:04:38,579 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 18:04:38,583 - INFO - Simulador de Cavalo de Tróia inicializado em modo educacional
+2025-09-07 18:04:38,584 - INFO - Evento de segurança: WARNING_DISPLAYED - Aviso de segurança exibido ao usuário
