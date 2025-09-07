@@ -213,7 +213,7 @@ function initParallax() {
 // Efeitos de Hover Avançados
 function initHoverEffects() {
     // Cards com efeito de elevação
-    document.querySelectorAll('.example-card, .action-card, .curiosity-item, .method-item, .language-item').forEach(card => {
+    document.querySelectorAll('.example-card, .action-card, .curiosity-item, .method-item, .language-item, .prop-item').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-15px) scale(1.03)';
             this.style.boxShadow = '0 20px 40px var(--shadow-medium)';
@@ -307,46 +307,7 @@ function showLoading() {
     }, 2000);
 }
 
-// Efeito de Cursor Personalizado
-function initCustomCursor() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: var(--accent-primary);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: all 0.1s ease;
-        opacity: 0;
-    `;
-    document.body.appendChild(cursor);
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
-        cursor.style.opacity = '1';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    
-    // Efeito de hover
-    document.querySelectorAll('a, button, .card, .example-card, .action-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.background = 'var(--accent-secondary)';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.background = 'var(--accent-primary)';
-        });
-    });
-}
+// Efeito de Cursor Personalizado - REMOVIDO
 
 // Sistema de Notificações
 function showNotification(message, type = 'info') {
@@ -408,11 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initHoverEffects();
     initScrollIndicator();
     initTooltips();
-    initCustomCursor();
     initTypingEffect();
     
     // Observar elementos para animação
-    document.querySelectorAll('.content-card, .example-card, .method-item, .action-card, .curiosity-item, .language-item').forEach(el => {
+    document.querySelectorAll('.content-card, .example-card, .method-item, .action-card, .curiosity-item, .language-item, .prop-item').forEach(el => {
         el.classList.add('animate-on-scroll');
         animationObserver.observe(el);
     });
@@ -481,41 +441,4 @@ document.querySelector('.hero-image').addEventListener('click', () => {
     }
 });
 
-// Efeito de partículas no cursor
-document.addEventListener('mousemove', (e) => {
-    if (Math.random() < 0.1) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: fixed;
-            left: ${e.clientX}px;
-            top: ${e.clientY}px;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            animation: particleFade 1s ease-out forwards;
-        `;
-        
-        document.body.appendChild(particle);
-        
-        setTimeout(() => particle.remove(), 1000);
-    }
-});
-
-// Adicionar animação CSS para partículas do cursor
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes particleFade {
-        0% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0);
-        }
-    }
-`;
-document.head.appendChild(style);
+// Efeito de partículas no cursor - REMOVIDO
