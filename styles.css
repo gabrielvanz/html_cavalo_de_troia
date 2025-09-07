@@ -1137,6 +1137,14 @@ body {
     transition: all 0.3s ease;
 }
 
+.content-image2 {
+    width: 93%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    transition: all 0.3s ease;
+}
+
 /* Rodapé */
 .footer {
     background: var(--footer-bg);
