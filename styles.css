@@ -683,6 +683,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.demo-content p {
+    color: grey
+}
+
 .demo-trojan {
     position: absolute;
     top: 50%;
@@ -704,6 +708,10 @@ body {
 .trojan-icon {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+}
+
+.demo-trojan p {
+    color: white
 }
 
 /* Grids e Cards */
