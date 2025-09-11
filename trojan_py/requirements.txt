@@ -1,60 +1,8 @@
-# Simulador Educacional de Cavalo de Tróia - Criptografia e Segurança
-# Atitus Educação - 2024
-# Integrantes: Diogo Chaves, Gabriel Vanz, Vitor Badin
+# Dependências para as demonstrações de cavalo de tróia
+# Instale com: pip install -r requirements.txt
 
-# Dependências principais
-# Python 3.8+ é necessário
+# Para demonstração 2 (CryptoLocker)
+cryptography>=3.4.8
 
-# Bibliotecas padrão (incluídas no Python)
-# - os
-# - sys
-# - time
-# - random
-# - hashlib
-# - json
-# - threading
-# - datetime
-# - typing
-# - dataclasses
-# - enum
-# - logging
-# - re
-
-# Dependências opcionais para funcionalidades avançadas
-# (não são obrigatórias para o funcionamento básico)
-
-# Para interface gráfica (opcional)
-# tkinter  # Incluído no Python padrão
-
-# Para análise de rede (opcional)
-# scapy>=2.4.5
-
-# Para criptografia avançada (opcional)
-# cryptography>=3.4.8
-
-# Para visualização de dados (opcional)
-# matplotlib>=3.5.0
-# seaborn>=0.11.0
-
-# Para processamento de dados (opcional)
-# pandas>=1.3.0
-# numpy>=1.21.0
-
-# Para testes (opcional)
-# pytest>=6.2.0
-# pytest-cov>=2.12.0
-
-# Para documentação (opcional)
-# sphinx>=4.0.0
-# sphinx-rtd-theme>=0.5.0
-
-# Para desenvolvimento (opcional)
-# black>=21.0.0
-# flake8>=3.9.0
-# mypy>=0.910
-
-# NOTA: Este simulador foi projetado para funcionar apenas com
-# bibliotecas padrão do Python para máxima compatibilidade e segurança.
-# As dependências opcionais listadas acima podem ser instaladas
-# para funcionalidades adicionais, mas não são necessárias para
-# o funcionamento básico do simulador educacional.
+# Para demonstração 3 (Keylogger)
+pynput>=1.7.6
