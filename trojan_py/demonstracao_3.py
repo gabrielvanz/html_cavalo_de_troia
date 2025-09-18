@@ -126,7 +126,7 @@ def on_key_press(key):
         
         # Mostrar tecla capturada (apenas algumas para não poluir)
         if len(teclas_capturadas) <= 20 or len(teclas_capturadas) % 10 == 0:
-        print(f"🔍 Tecla capturada: {tecla_com_timestamp}")
+            print(f"🔍 Tecla capturada: {tecla_com_timestamp}")
         
     except Exception as e:
         print(f"❌ Erro ao capturar tecla: {e}")
@@ -391,3 +391,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
